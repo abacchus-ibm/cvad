@@ -28,18 +28,18 @@ If you are experiencing intermittent, long session login times, connection timeo
 
 For a technical overview of EDT, see [Adaptive transport](https://docs.citrix.com/en-us/citrix-virtual-apps-desktops/technical-overview/hdx/adaptive-transport.html){: external} in the Citrix product documentation. 
 
-## Citrix connector failure
+## Citrix Cloud Connector failure
 {: #connector-failure}
 
-If the Connectors are in spinning state, or if you get a message in the Citrix Cloud Connectivity Test that the connectivity could not be validated, either:
+If the Cloud Connectors are in spinning state, or if you get a message in the Citrix Cloud Connectivity Test that the connectivity could not be validated, either:
 
-* The Background Intelligent Transfer Service (BITS) in Connectors do not have the correct proxy settings. 
+* The Background Intelligent Transfer Service (BITS) in Cloud Connectors do not have the correct proxy settings. 
 * The virtual machine master image might not have the correct proxy settings. 
 
 ### Solution 1 - Background Intelligent Transfer Service (BITS) in Connectors do not have the correct proxy settings
 {: #connector-failure-bits}
 
-Citrix cloud connector downloads core component installer package by using the BITS service (Background Intelligent Transfer Service).
+Citrix Cloud Connector downloads core component installer package by using the BITS service (Background Intelligent Transfer Service).
 If the BITS service does not pick up the correct proxy settings, it can't connect to internet and the file download fails.
 
 1.	Run the `netsh winhttp import proxy source =ie` on the cloud connector’s elevated command prompt. Restart the OS to make the changes effective.
